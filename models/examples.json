@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Illustrative household 1",
+    "history": [
+      90,
+      85,
+      94,
+      96,
+      103,
+      110
+    ],
+    "forecast_month": "2024-11",
+    "profile": {
+      "household_members": 4,
+      "electricity_meters": 1,
+      "refrigerators": 1,
+      "washing_machines": 1,
+      "air_conditioners": 0,
+      "rice_cookers": 1
+    },
+    "consumption_limit": 150
+  },
+  {
+    "name": "Illustrative household 2",
+    "history": [
+      240,
+      225,
+      245,
+      260,
+      275,
+      280
+    ],
+    "forecast_month": "2024-11",
+    "profile": {
+      "household_members": 5,
+      "electricity_meters": 1,
+      "refrigerators": 1,
+      "washing_machines": 1,
+      "air_conditioners": 2,
+      "rice_cookers": 1
+    },
+    "consumption_limit": 250
+  },
+  {
+    "name": "Illustrative household 3",
+    "history": [
+      45,
+      55,
+      50,
+      48,
+      52,
+      49
+    ],
+    "forecast_month": "2024-11",
+    "profile": null,
+    "consumption_limit": 100
+  }
+]
