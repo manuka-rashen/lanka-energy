@@ -1,5 +1,8 @@
 # Lanka Energy
 
+**Live demo:** [Lanka Energy on Microsoft Azure](https://lanka-energy-manuka.azurewebsites.net/)  
+**Source code:** [manuka-rashen/lanka-energy](https://github.com/manuka-rashen/lanka-energy)
+
 Explainable household electricity consumption forecasting for Sri Lanka. The application predicts the next monthly consumption in **kWh**, displays an uncertainty range, explains the model prediction, and flags a user-defined consumption limit.
 
 Built with real RECON-SL utility records and household surveys from LIRNEasia and LECO. This is a **historical-data prototype for LECO service areas**, not a validated current nationwide forecasting service.
@@ -69,6 +72,8 @@ See [notebooks/01_project_walkthrough.ipynb](notebooks/01_project_walkthrough.ip
 The interface supports historical forecast months from April 2023 through November 2024. November is a one-month extension beyond observed targets and has no measured outcome in this dataset. Predictions for 2026 or future operational use need refreshed data and validation. These records do not establish current tariff costs, measured appliance-level consumption or guaranteed savings. Prediction-interval coverage can change under temporal or population shifts.
 
 ## Azure deployment
+
+The public demo is running on Azure App Service **F1 Free**, Linux / Python 3.12, in **Central India**. A real forecast was verified on desktop and phone layouts on 13 October 2026. The saved model returned **105.64 kWh** for the fictional example history `[90, 85, 94, 96, 103, 110]`, with a **74.7–136.6 kWh** nominal 90% range. This is a historical demonstration; the model's measured error and scope are described above.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmanuka-rashen%2Flanka-energy%2Fmain%2Fdeployment%2Fazuredeploy.json)
 
