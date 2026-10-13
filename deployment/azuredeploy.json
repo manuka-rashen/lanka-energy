@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "appName": {"type":"string","defaultValue":"[concat('lanka-energy-', uniqueString(resourceGroup().id))]","minLength":2,"maxLength":60},
-    "location": {"type":"string","defaultValue":"[resourceGroup().location]"},
+    "location": {"type":"string","defaultValue":"centralindia"},
     "repositoryUrl": {"type":"string","defaultValue":"https://github.com/manuka-rashen/lanka-energy"},
     "branch": {"type":"string","defaultValue":"main"}
   },
