@@ -74,7 +74,11 @@ The interface supports historical forecast months from April 2023 through Novemb
 
 The template creates only a Linux **F1 Free** App Service plan and a Python 3.12 web app, deploying the public `main` branch through manual Git integration. Choose a region permitted by your subscription and supporting Linux F1. It creates no paid database, storage account or monitoring service. Shared CPU limits and cold starts apply. If F1 is unavailable, do not silently select a paid plan; check another permitted region or explicitly approve a different plan.
 
+The app resource location defaults to `centralindia`. In the portal, choose **Central India** for the resource-group region and keep the **Location** parameter as the explicit code `centralindia`. Check your subscription's allowed-region policy before using another location. A literal expression entered as a Location parameter can be rejected by that policy.
+
 Verify the deployed URL, `/health`, and a real `/api/forecast` request before calling deployment successful. Resource creation alone is not proof that the trained model runs. Manual integration does not auto-deploy future commits; synchronize from Deployment Center after verified updates.
+
+CI starts the committed model through `startup.sh` and verifies health, dashboard, metadata and a real HTTP forecast before downloading data and retraining. The committed metrics describe the frozen Windows-trained model. The Linux CI refit selected a history-only blend with 17.686 kWh test MAE in the first run; these temporary CI artifacts are not published or deployed. Platform-dependent numerical differences can change the winning validation candidate when performance is close. Use the committed model for the published demo and record the environment when reporting a new training run.
 
 ## Repository layout
 
