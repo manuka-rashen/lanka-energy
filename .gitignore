@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.env.*
+*.log
+*.zip
+.DS_Store
+deployment/local-*.json
+data/raw/
+results/test_predictions.csv
+results/household_split.csv

@@ -1,0 +1,9 @@
+pandas==3.0.6
+numpy==2.5.4
+scikit-learn==1.9.1
+xgboost==3.4.1; platform_system == "Windows"
+xgboost-cpu==3.4.1; platform_system != "Windows"
+fastapi==0.143.0
+uvicorn==0.54.0
+gunicorn==26.2.0
+joblib==1.6.0
