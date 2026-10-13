@@ -1,0 +1,667 @@
+{
+  "usable_rows": 76149,
+  "households": 4061,
+  "held_out_households": 813,
+  "splits": {
+    "train": {
+      "rows": 38489,
+      "households": 3245,
+      "start": "2023-04-30",
+      "end": "2024-03-31"
+    },
+    "validation": {
+      "rows": 9614,
+      "households": 3213,
+      "start": "2024-04-30",
+      "end": "2024-06-30"
+    },
+    "calibration": {
+      "rows": 3208,
+      "households": 3208,
+      "start": "2024-07-31",
+      "end": "2024-07-31"
+    },
+    "test": {
+      "rows": 9622,
+      "households": 3216,
+      "start": "2024-08-31",
+      "end": "2024-10-31"
+    },
+    "unseen_test": {
+      "rows": 2399,
+      "households": 801,
+      "start": "2024-08-31",
+      "end": "2024-10-31"
+    }
+  },
+  "candidates": [
+    {
+      "name": "xgb_context_d5_blend_0.5",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.401694287387304,
+        "rmse_kwh": 50.198563571731036,
+        "r2": 0.8717212574932838,
+        "wape_percent": 15.901784185457146
+      },
+      "base_model": "xgb_context_d5",
+      "learned_weight": 0.5
+    },
+    {
+      "name": "xgb_history_d5_blend_0.5",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.42480573954616,
+        "rmse_kwh": 50.22660626490099,
+        "r2": 0.871577895375142,
+        "wape_percent": 15.918956345731354
+      },
+      "base_model": "xgb_history_d5",
+      "learned_weight": 0.5
+    },
+    {
+      "name": "xgb_context_d5_blend_0.75",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.53103096209372,
+        "rmse_kwh": 52.138666089192505,
+        "r2": 0.8616140670413376,
+        "wape_percent": 15.997883300827565
+      },
+      "base_model": "xgb_context_d5",
+      "learned_weight": 0.75
+    },
+    {
+      "name": "xgb_context_d5_blend_0.25",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.562818943319634,
+        "rmse_kwh": 49.992036015739465,
+        "r2": 0.8727746181547535,
+        "wape_percent": 16.021502254091644
+      },
+      "base_model": "xgb_context_d5",
+      "learned_weight": 0.25
+    },
+    {
+      "name": "xgb_history_d5_blend_0.75",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.568225250909748,
+        "rmse_kwh": 52.17988658895925,
+        "r2": 0.8613951664574987,
+        "wape_percent": 16.02551922281308
+      },
+      "base_model": "xgb_history_d5",
+      "learned_weight": 0.75
+    },
+    {
+      "name": "xgb_history_d5_blend_0.25",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.572341636319234,
+        "rmse_kwh": 50.00586460128389,
+        "r2": 0.8727042233259737,
+        "wape_percent": 16.028577759746035
+      },
+      "base_model": "xgb_history_d5",
+      "learned_weight": 0.25
+    },
+    {
+      "name": "xgb_history_d3_blend_0.5",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.66294807782162,
+        "rmse_kwh": 51.03523038011643,
+        "r2": 0.86740954129379,
+        "wape_percent": 16.09589972310257
+      },
+      "base_model": "xgb_history_d3",
+      "learned_weight": 0.5
+    },
+    {
+      "name": "xgb_context_d3_blend_0.5",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.675173781903638,
+        "rmse_kwh": 51.02984480352291,
+        "r2": 0.8674375234695768,
+        "wape_percent": 16.10498360708002
+      },
+      "base_model": "xgb_context_d3",
+      "learned_weight": 0.5
+    },
+    {
+      "name": "xgb_history_d3_blend_0.25",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.676209125061007,
+        "rmse_kwh": 50.21501227446799,
+        "r2": 0.8716371768164404,
+        "wape_percent": 16.10575288278433
+      },
+      "base_model": "xgb_history_d3",
+      "learned_weight": 0.25
+    },
+    {
+      "name": "xgb_context_d3_blend_0.25",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.68358464236812,
+        "rmse_kwh": 50.21884398180196,
+        "r2": 0.8716175863587572,
+        "wape_percent": 16.11123300425971
+      },
+      "base_model": "xgb_context_d3",
+      "learned_weight": 0.25
+    },
+    {
+      "name": "xgb_history_d3_blend_0.75",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.927979961784708,
+        "rmse_kwh": 53.90274629906784,
+        "r2": 0.8520912389279489,
+        "wape_percent": 16.292822441671156
+      },
+      "base_model": "xgb_history_d3",
+      "learned_weight": 0.75
+    },
+    {
+      "name": "xgb_context_d3_blend_0.75",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.941025312759784,
+        "rmse_kwh": 53.876734477832656,
+        "r2": 0.8522339569971757,
+        "wape_percent": 16.30251533574971
+      },
+      "base_model": "xgb_context_d3",
+      "learned_weight": 0.75
+    },
+    {
+      "name": "xgb_context_d5",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 21.965038962440577,
+        "rmse_kwh": 55.63126690373305,
+        "r2": 0.8424530446796917,
+        "wape_percent": 16.32035784249714
+      }
+    },
+    {
+      "name": "xgb_history_d5",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 22.011988808130656,
+        "rmse_kwh": 55.68368140197296,
+        "r2": 0.8421560306010796,
+        "wape_percent": 16.355242291535557
+      }
+    },
+    {
+      "name": "last_month",
+      "kind": "baseline",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 22.142396505096734,
+        "rmse_kwh": 51.5399277884489,
+        "r2": 0.8647741483193392,
+        "wape_percent": 16.452137192725655
+      }
+    },
+    {
+      "name": "ridge_history",
+      "kind": "ridge",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 22.39792730271695,
+        "rmse_kwh": 47.183790771920904,
+        "r2": 0.8866666378486496,
+        "wape_percent": 16.642000459714243
+      }
+    },
+    {
+      "name": "xgb_history_d3",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 22.473303532535926,
+        "rmse_kwh": 58.51735851202763,
+        "r2": 0.8256822781892348,
+        "wape_percent": 16.69800614427358
+      }
+    },
+    {
+      "name": "xgb_context_d3",
+      "kind": "xgboost",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos",
+        "profile_available",
+        "household_members",
+        "electricity_meters",
+        "refrigerators",
+        "washing_machines",
+        "air_conditioners",
+        "rice_cookers"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 22.486054139894136,
+        "rmse_kwh": 58.46284723135588,
+        "r2": 0.8260068949054202,
+        "wape_percent": 16.707480039364366
+      }
+    },
+    {
+      "name": "mean_3",
+      "kind": "baseline",
+      "features": [
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_4",
+        "lag_5",
+        "lag_6",
+        "mean_6",
+        "std_6",
+        "recent_change",
+        "trend_6",
+        "month_sin",
+        "month_cos"
+      ],
+      "validation": {
+        "rows": 9614,
+        "mae_kwh": 23.801435406698566,
+        "rmse_kwh": 50.34323318503057,
+        "r2": 0.870980806914966,
+        "wape_percent": 17.68482831588116
+      }
+    }
+  ],
+  "selected": "xgb_context_d5_blend_0.5",
+  "test_results": {
+    "test": {
+      "rows": 9622,
+      "mae_kwh": 17.81701023586604,
+      "rmse_kwh": 39.8185664519599,
+      "r2": 0.9026685650615857,
+      "wape_percent": 13.640399777971629,
+      "interval_coverage_percent": 89.92932862190813,
+      "mean_interval_width_kwh": 83.94879298629739,
+      "last_month_baseline": {
+        "rows": 9622,
+        "mae_kwh": 17.895136146331325,
+        "rmse_kwh": 40.2652024813829,
+        "r2": 0.9004728289571925,
+        "wape_percent": 13.700211645263442
+      }
+    },
+    "unseen_test": {
+      "rows": 2399,
+      "mae_kwh": 19.280778598633532,
+      "rmse_kwh": 69.70572846174564,
+      "r2": 0.7875893294995346,
+      "wape_percent": 14.576638049326183,
+      "interval_coverage_percent": 89.95414756148395,
+      "mean_interval_width_kwh": 83.98269912901684,
+      "last_month_baseline": {
+        "rows": 2399,
+        "mae_kwh": 19.28136723634848,
+        "rmse_kwh": 75.03755902675421,
+        "r2": 0.7538517312897598,
+        "wape_percent": 14.577083070717258
+      }
+    }
+  },
+  "context_ablation_validation": {
+    "xgb_history_d3": {
+      "rows": 6577,
+      "mae_kwh": 22.46390834636958,
+      "rmse_kwh": 56.078016951679835,
+      "r2": 0.8374598122453203,
+      "wape_percent": 16.417566119034085
+    },
+    "xgb_context_d3": {
+      "rows": 6577,
+      "mae_kwh": 22.460362302435918,
+      "rmse_kwh": 55.983069678720234,
+      "r2": 0.8380097490512787,
+      "wape_percent": 16.414974521443664
+    },
+    "xgb_history_d5": {
+      "rows": 6577,
+      "mae_kwh": 22.027961262638705,
+      "rmse_kwh": 53.56345823086911,
+      "r2": 0.8517097220006755,
+      "wape_percent": 16.098957711218514
+    },
+    "xgb_context_d5": {
+      "rows": 6577,
+      "mae_kwh": 21.956946875397623,
+      "rmse_kwh": 53.52729893969588,
+      "r2": 0.8519098682055789,
+      "wape_percent": 16.047057419427947
+    }
+  },
+  "limitations": [
+    "Historical LECO-area sample; not nationally representative.",
+    "Survey variables masked until their recorded collection dates.",
+    "Zero measurements retained; measured targets never imputed.",
+    "Prediction intervals are calibrated on July 2024; future temporal shifts can change coverage.",
+    "This monthly prototype is not an appliance meter or live grid-control system."
+  ],
+  "seconds": 6.46
+}
